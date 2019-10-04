@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="011" author="root">
+        <insert tableName="userinfo">
+            <column name="id" valueNumeric="01"/>
+            <column name="user_name" value="chandan7"/>
+            <column name="password" value="7398739"/>
+            <column name="zip" valueNumeric="53663"/>
+            <column name="contact_no" valueNumeric="5337629211"/>
+        </insert>
+    </changeSet>
+    <changeSet id="tag01" author="root">
+        <tagDatabase tag="tag01"/>
+    </changeSet>
+
+    <changeSet id="101" author="root">
+        <insert tableName="question">
+            <column name="q_id" valueNumeric="02"/>
+            <column name="title" value="java"/>
+            <column name="description" value="what is java"/>
+            <column name="u_id" valueNumeric="01"/>
+            <column name="created_at" value="now()"/>
+            <column name="updated_at" value="now()"/>
+        </insert>
+    </changeSet>
+    <changeSet id="tag02" author="root">
+        <tagDatabase tag="tag02"/>
+    </changeSet>
+
+    <changeSet author="root" id="201">
+        <insert tableName="answers">
+            <column name="id" valueNumeric="7"/>
+            <column name="content" value="my first answer"/>
+            <column name="u_id" valueNumeric="01"/>
+            <column name="q_id" valueNumeric="02"/>
+            <column name="extra" value = "zodiac"/>
+        </insert>
+    </changeSet>
+    <changeSet id="tag03" author="root">
+        <tagDatabase tag="tag03"/>
+    </changeSet>
+
+
+<!--    <changeSet author="root" id="201">-->
+<!--        <insert tableName="answers">-->
+<!--            <column name="id" valueNumeric="7"/>-->
+<!--            <column name="content" value="my first answer"/>-->
+<!--            <column name="u_id" valueNumeric="9"/>-->
+<!--            <column name="q_id" valueNumeric="61"/>-->
+<!--            <column name="extra" value = "zodiac"/>-->
+<!--        </insert>-->
+<!--    </changeSet>-->
+<!--    <changeSet id="tag01" author="root">-->
+<!--        <tagDatabase tag="01"/>-->
+<!--    </changeSet>-->
+
+<!--    <changeSet author="root" id="22">-->
+<!--        <insert tableName="answers">-->
+<!--            <column name="id" valueNumeric="4"/>-->
+<!--            <column name="content" value="answer first question"/>-->
+<!--            <column name="extra" value = "zodiac"/>-->
+<!--        </insert>-->
+
+<!--    </changeSet>-->
+</databaseChangeLog>

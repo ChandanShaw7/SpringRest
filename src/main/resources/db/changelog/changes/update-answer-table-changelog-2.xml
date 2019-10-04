@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+        <changeSet author="admin" id="3">
+            <update tableName="answers">
+                <column name="content" value="updated my answer"/>
+                <where>id = 4</where>
+            </update>
+        </changeSet>
+    <changeSet id="311" author="root">
+        <update tableName="answers">
+            <column name="content" value="updated my answer"/>
+            <where>id = 4</where>
+        </update>
+<!--        <addColumn tableName="answers">-->
+<!--            <column name="rwcolumn" type="varchar(255)"/>-->
+<!--        </addColumn>-->
+<!--        <rollback>-->
+<!--        <dropColumn catalogName="userdetails"-->
+<!--                    columnName="rcolumn"-->
+<!--                    tableName="answers"/>-->
+<!--        </rollback>-->
+    </changeSet>
+
+
+<!--    <changeSet author="root" id="09">-->
+<!--&lt;!&ndash;        <rollback changeSetId="31" changeSetAuthor="root"/>&ndash;&gt;-->
+<!--                <createTable tableName="person">-->
+<!--                    <column name="extra" type="VARCHAR(255)">-->
+<!--                        <constraints nullable="false"/>-->
+<!--                    </column>-->
+<!--                </createTable>-->
+<!--    </changeSet>-->
+
+
+<!--    <changeSet id="90" author="root">-->
+<!--        <dropTable tableName="person"/>-->
+<!--&lt;!&ndash;        <rollback changeSetAuthor="root" changeSetId="09"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <rollback>drop table person</rollback>&ndash;&gt;-->
+<!--    </changeSet>-->
+    <changeSet id="231" author="root">
+        <dropTable tableName="persons"/>
+    </changeSet>
+
+    </databaseChangeLog>

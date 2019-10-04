@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="kuliza-r (generated)" id="1569845122323-1">
+        <createSequence sequenceName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-2">
+        <createSequence sequenceName="question_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-3">
+        <createTable tableName="person">
+            <column name="id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="q_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="a_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-4">
+        <createTable tableName="record">
+            <column name="id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="details" type="VARCHAR(200)"/>
+            <column name="u_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-5">
+        <addPrimaryKey columnNames="id" constraintName="person_pkey" tableName="person"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-6">
+        <addPrimaryKey columnNames="id" constraintName="record_pkey" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-7">
+        <addForeignKeyConstraint baseColumnNames="u_id" baseTableName="record" constraintName="fk_user" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-8">
+        <addForeignKeyConstraint baseColumnNames="q_id" baseTableName="answers" constraintName="fkoj7r0rrodjxdf1cwoy4tig6h3" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="NO ACTION" referencedColumnNames="q_id" referencedTableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-9">
+        <addForeignKeyConstraint baseColumnNames="u_id" baseTableName="question" constraintName="fkpq89wkftck3l5pfi8t3onb2qh" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-10">
+        <addForeignKeyConstraint baseColumnNames="u_id" baseTableName="answers" constraintName="fkpysatgd58r1ni95nf3av645e7" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-11">
+        <addForeignKeyConstraint baseColumnNames="q_id" baseTableName="person" constraintName="question_fk" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="NO ACTION" referencedColumnNames="q_id" referencedTableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-12">
+        <addForeignKeyConstraint baseColumnNames="a_id" baseTableName="person" constraintName="user_fk" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-13">
+        <dropTable tableName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-14">
+        <dropTable tableName="question_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-15">
+        <dropIndex indexName="FKhhde1tq63639i75wgawjcpdk2" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-16">
+        <dropIndex indexName="FKo6d9tn7eax9lse434wgr7t1pn" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-17">
+        <dropIndex indexName="FKoj7r0rrodjxdf1cwoy4tig6h3" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-18">
+        <modifyDataType columnName="city" newDataType="varchar(255)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-19">
+        <modifyDataType columnName="contact_no" newDataType="bigint" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-20">
+        <modifyDataType columnName="content" newDataType="varchar(255)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-21">
+        <modifyDataType columnName="created_at" newDataType="timestamp(29,6)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-22">
+        <modifyDataType columnName="description" newDataType="varchar(255)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-23">
+        <modifyDataType columnName="extra" newDataType="varchar(255)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-24">
+        <modifyDataType columnName="id" newDataType="int" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-25">
+        <modifyDataType columnName="id" newDataType="int" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-26">
+        <modifyDataType columnName="password" newDataType="varchar(255)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-27">
+        <modifyDataType columnName="q_id" newDataType="int" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-28">
+        <modifyDataType columnName="q_id" newDataType="int" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-29">
+        <modifyDataType columnName="title" newDataType="varchar(255)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-30">
+        <modifyDataType columnName="u_id" newDataType="int" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-31">
+        <modifyDataType columnName="u_id" newDataType="int" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-32">
+        <modifyDataType columnName="updated_at" newDataType="timestamp(29,6)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-33">
+        <modifyDataType columnName="user_name" newDataType="varchar(255)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569845122323-34">
+        <modifyDataType columnName="zip" newDataType="int" tableName="userinfo"/>
+    </changeSet>
+</databaseChangeLog>

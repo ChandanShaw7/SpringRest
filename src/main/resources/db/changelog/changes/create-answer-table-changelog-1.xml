@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+<!--<changeSet author="root" id="101">-->
+<!--    <sql-->
+<!--            endDelimiter="\nGO"-->
+<!--            splitStatements="true"-->
+<!--            stripComments="true"-->
+<!--    >-->
+<!--        CREATE TABLE record ( id int not null, details varchar(200), u_id` int not null, primary key (`id`), CONSTRAINT `FK_User` FOREIGN KEY (`u_id`) REFERENCES `user` (`id`) ON DELETE CASCADE);-->
+<!--    </sql>-->
+<!--    <rollback>-->
+<!--        <dropTable tableName="record"/>-->
+<!--    </rollback>-->
+<!--</changeSet>-->
+
+
+<!--    <changeSet author="root" id="23">-->
+<!--        <createTable tableName="answers">-->
+<!--            <column name="extra" type="VARCHAR(255)">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--        </createTable>-->
+<!--        <rollback>-->
+<!--            <dropTable tableName="name"/>-->
+<!--        </rollback>-->
+<!--    </changeSet>-->
+
+
+<!--    <changeSet id="27" author="root">-->
+<!--        <addColumn tableName="answers">-->
+<!--            <column name="extra" type="varchar(255)"/>-->
+<!--        </addColumn>-->
+<!--    </changeSet>-->
+
+
+<!--    <changeSet id="27" author="root">-->
+<!--        <sql-->
+<!--             endDelimiter="\nGO"-->
+<!--             splitStatements="true"-->
+<!--             stripComments="true"-->
+<!--        >-->
+<!--            insert into answers (id,content,u_id,q_id,extra) values (26,'Python is oop language',9,211,'functional also')-->
+<!--        </sql>-->
+<!--        <comment>using sql native query</comment>-->
+<!--    </changeSet>-->
+
+
+
+<!--    <changeSet id="111" author="root">-->
+<!--        <createTable tableName="person">-->
+<!--            <column name="id" type = "INT">-->
+<!--                <constraints primaryKey="true" nullable="false"/>-->
+<!--            </column>-->
+<!--                    <column name="name" type="VARCHAR(255)">-->
+<!--                        <constraints nullable="false"/>-->
+<!--                    </column>-->
+<!--            <column name="q_id" type="INT">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--            <column name="a_id" type="INT">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--                </createTable>-->
+<!--                    <addForeignKeyConstraint baseTableSchemaName="public" baseTableCatalogName="userdetails" baseTableName="person" baseColumnNames="a_id" constraintName="user_fk" referencedTableSchemaName="public" referencedTableCatalogName="userdetails" referencedTableName="userinfo"-->
+<!--                                             referencedColumnNames="id" onDelete="CASCADE"/>-->
+<!--                    <addForeignKeyConstraint baseTableSchemaName="public" baseTableCatalogName="userdetails" baseTableName="person" baseColumnNames="q_id" constraintName="question_fk" referencedTableSchemaName="public" referencedTableCatalogName="userdetails" referencedTableName="question"-->
+<!--                                 referencedColumnNames="q_id" onDelete="CASCADE"/>-->
+<!--&lt;!&ndash;                <rollback>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <dropTable tableName="name"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                </rollback>&ndash;&gt;-->
+<!--    </changeSet>-->
+    <changeSet author="kuliza-r (generated)" id="1569838675421-1">
+        <createTable tableName="answers">
+            <column name="id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="content" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="q_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="u_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="extra" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569838675421-2">
+        <createTable tableName="hibernate_sequence">
+            <column name="next_val" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+<!--    <changeSet author="kuliza-r (generated)" id="1569838675421-3">-->
+<!--        <createTable tableName="person">-->
+<!--            <column autoIncrement="true" name="id" type="INT">-->
+<!--                <constraints primaryKey="true"/>-->
+<!--            </column>-->
+<!--            <column name="name" type="VARCHAR(255)">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--        </createTable>-->
+<!--    </changeSet>-->
+    <changeSet author="kuliza-r (generated)" id="1569838675421-4">
+        <createTable tableName="question">
+            <column name="q_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="title" type="VARCHAR(255)"/>
+            <column name="u_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569838675421-5">
+        <createTable tableName="question_sequence">
+            <column name="next_val" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+<!--    <changeSet author="kuliza-r (generated)" id="1569838675421-6">-->
+<!--        <createTable tableName="user">-->
+<!--            <column name="id" type="INT">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--            <column name="city" type="VARCHAR(255)"/>-->
+<!--            <column name="contact_no" type="BIGINT">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--            <column name="password" type="VARCHAR(255)"/>-->
+<!--            <column name="user_name" type="VARCHAR(255)"/>-->
+<!--            <column name="zip" type="INT">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--        </createTable>-->
+<!--    </changeSet>-->
+    <changeSet author="kuliza-r (generated)" id="1569838675421-7">
+        <createTable tableName="userinfo">
+            <column name="id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="city" type="VARCHAR(255)"/>
+            <column name="contact_no" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="user_name" type="VARCHAR(255)"/>
+            <column name="zip" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569838675421-8">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569838675421-9">
+        <addPrimaryKey columnNames="q_id" constraintName="PRIMARY" tableName="question"/>
+    </changeSet>
+<!--    <changeSet author="kuliza-r (generated)" id="1569838675421-10">-->
+<!--        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="user"/>-->
+<!--    </changeSet>-->
+    <changeSet author="kuliza-r (generated)" id="1569838675421-11">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569838675421-12">
+        <createIndex indexName="FKhhde1tq63639i75wgawjcpdk2" tableName="answers">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569838675421-13">
+        <createIndex indexName="FKo6d9tn7eax9lse434wgr7t1pn" tableName="question">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1569838675421-14">
+        <createIndex indexName="FKoj7r0rrodjxdf1cwoy4tig6h3" tableName="answers">
+            <column name="q_id"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="102" author="root">
+        <dropTable tableName="record"/>
+    </changeSet>
+
+    <changeSet id="tag04" author = "root">
+        <tagDatabase tag="tag04"/>
+    </changeSet>
+
+    <changeSet id="120" author="root">
+        <createTable tableName="record">
+            <column name="id" type="INT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="u_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableSchemaName="public" baseTableCatalogName="userdetails" baseTableName="record" baseColumnNames="u_id" constraintName="user_fk" referencedTableSchemaName="public" referencedTableCatalogName="userdetails" referencedTableName="userinfo" referencedColumnNames="id" onDelete="CASCADE"/>
+    </changeSet>
+</databaseChangeLog>
