@@ -1,0 +1,97 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="kuliza-r (generated)" id="1570536107114-14">
+        <createTable tableName="hibernate_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-15">
+        <createTable tableName="question_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-16">
+        <createIndex indexName="FKhhde1tq63639i75wgawjcpdk2" tableName="answers">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-17">
+        <createIndex indexName="FKo6d9tn7eax9lse434wgr7t1pn" tableName="question">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-18">
+        <createIndex indexName="FKoj7r0rrodjxdf1cwoy4tig6h3" tableName="answers">
+            <column name="q_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-19">
+        <createIndex indexName="user_fk" tableName="record">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-20">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkoj7r0rrodjxdf1cwoy4tig6h3"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-21">
+        <dropForeignKeyConstraint baseTableName="question" constraintName="fkpq89wkftck3l5pfi8t3onb2qh"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-22">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkpysatgd58r1ni95nf3av645e7"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-23">
+        <dropForeignKeyConstraint baseTableName="person" constraintName="question_fk"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-24">
+        <dropTable tableName="person"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-25">
+        <dropColumn columnName="details" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-26">
+        <dropSequence sequenceName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-27">
+        <dropSequence sequenceName="question_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-1">
+        <dropForeignKeyConstraint baseTableName="record" constraintName="user_fk"/>
+        <addForeignKeyConstraint baseColumnNames="u_id" baseTableName="record" constraintName="user_fk" referencedColumnNames="id" referencedTableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-2">
+        <modifyDataType columnName="contact_no" newDataType="bigint(19)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-3">
+        <modifyDataType columnName="created_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-4">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-5">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-6">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-7">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-8">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-9">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-10">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-11">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-12">
+        <modifyDataType columnName="updated_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570536107114-13">
+        <modifyDataType columnName="zip" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+</databaseChangeLog>
