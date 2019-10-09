@@ -40,13 +40,13 @@ xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liqui
 
 
 <!--    <changeSet id="27" author="root">-->
-<!--        <sql-->
-<!--             endDelimiter="\nGO"-->
-<!--             splitStatements="true"-->
-<!--             stripComments="true"-->
-<!--        >-->
-<!--            insert into answers (id,content,u_id,q_id,extra) values (26,'Python is oop language',9,211,'functional also')-->
-<!--        </sql>-->
+        <sql
+             endDelimiter="\nGO"
+             splitStatements="true"
+             stripComments="true"
+        >
+            insert into answers (id,content,u_id,q_id,extra) values (26,'Python is oop language',9,211,'functional also')
+        </sql>
 <!--        <comment>using sql native query</comment>-->
 <!--    </changeSet>-->
 

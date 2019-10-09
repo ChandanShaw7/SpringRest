@@ -1,191 +1,1131 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
-    <changeSet author="kuliza-r (generated)" id="1570127832684-14">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-14">
         <createTable tableName="hibernate_sequence">
             <column name="next_val" type="BIGINT(19)"/>
         </createTable>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-15">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-15">
         <createTable tableName="question_sequence">
             <column name="next_val" type="BIGINT(19)"/>
         </createTable>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-16">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-16">
         <createIndex indexName="FKhhde1tq63639i75wgawjcpdk2" tableName="answers">
             <column name="u_id"/>
         </createIndex>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-17">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-17">
         <createIndex indexName="FKo6d9tn7eax9lse434wgr7t1pn" tableName="question">
             <column name="u_id"/>
         </createIndex>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-18">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-18">
         <createIndex indexName="FKoj7r0rrodjxdf1cwoy4tig6h3" tableName="answers">
             <column name="q_id"/>
         </createIndex>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-19">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-19">
         <createIndex indexName="user_fk" tableName="record">
             <column name="u_id"/>
         </createIndex>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-20">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-20">
         <dropForeignKeyConstraint baseTableName="answers" constraintName="fkoj7r0rrodjxdf1cwoy4tig6h3"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-21">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-21">
         <dropForeignKeyConstraint baseTableName="question" constraintName="fkpq89wkftck3l5pfi8t3onb2qh"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-22">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-22">
         <dropForeignKeyConstraint baseTableName="answers" constraintName="fkpysatgd58r1ni95nf3av645e7"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-23">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-23">
         <dropForeignKeyConstraint baseTableName="person" constraintName="question_fk"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-24">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-24">
         <dropTable tableName="person"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-25">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-25">
         <dropColumn columnName="details" tableName="record"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-26">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-26">
         <dropSequence sequenceName="hibernate_sequence"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-27">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-27">
         <dropSequence sequenceName="question_sequence"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-1">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-1">
         <dropForeignKeyConstraint baseTableName="record" constraintName="user_fk"/>
         <addForeignKeyConstraint baseColumnNames="u_id" baseTableName="record" constraintName="user_fk" referencedColumnNames="id" referencedTableName="userinfo"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-2">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-2">
         <modifyDataType columnName="contact_no" newDataType="bigint(19)" tableName="userinfo"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-3">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-3">
         <modifyDataType columnName="created_at" newDataType="datetime" tableName="question"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-4">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-4">
         <modifyDataType columnName="id" newDataType="int(10)" tableName="answers"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-5">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-5">
         <modifyDataType columnName="id" newDataType="int(10)" tableName="record"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-6">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-6">
         <modifyDataType columnName="id" newDataType="int(10)" tableName="userinfo"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-7">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-7">
         <modifyDataType columnName="q_id" newDataType="int(10)" tableName="answers"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-8">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-8">
         <modifyDataType columnName="q_id" newDataType="int(10)" tableName="question"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-9">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-9">
         <modifyDataType columnName="u_id" newDataType="int(10)" tableName="answers"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-10">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-10">
         <modifyDataType columnName="u_id" newDataType="int(10)" tableName="question"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-11">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-11">
         <modifyDataType columnName="u_id" newDataType="int(10)" tableName="record"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-12">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-12">
         <modifyDataType columnName="updated_at" newDataType="datetime" tableName="question"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570127832684-13">
+    <changeSet author="kuliza-r (generated)" id="1570191554748-13">
         <modifyDataType columnName="zip" newDataType="int(10)" tableName="userinfo"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-14">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-14">
         <createTable tableName="hibernate_sequence">
             <column name="next_val" type="BIGINT(19)"/>
         </createTable>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-15">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-15">
         <createTable tableName="question_sequence">
             <column name="next_val" type="BIGINT(19)"/>
         </createTable>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-16">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-16">
         <createIndex indexName="FKhhde1tq63639i75wgawjcpdk2" tableName="answers">
             <column name="u_id"/>
         </createIndex>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-17">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-17">
         <createIndex indexName="FKo6d9tn7eax9lse434wgr7t1pn" tableName="question">
             <column name="u_id"/>
         </createIndex>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-18">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-18">
         <createIndex indexName="FKoj7r0rrodjxdf1cwoy4tig6h3" tableName="answers">
             <column name="q_id"/>
         </createIndex>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-19">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-19">
         <createIndex indexName="user_fk" tableName="record">
             <column name="u_id"/>
         </createIndex>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-20">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-20">
         <dropForeignKeyConstraint baseTableName="answers" constraintName="fkoj7r0rrodjxdf1cwoy4tig6h3"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-21">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-21">
         <dropForeignKeyConstraint baseTableName="question" constraintName="fkpq89wkftck3l5pfi8t3onb2qh"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-22">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-22">
         <dropForeignKeyConstraint baseTableName="answers" constraintName="fkpysatgd58r1ni95nf3av645e7"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-23">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-23">
         <dropForeignKeyConstraint baseTableName="person" constraintName="question_fk"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-24">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-24">
         <dropTable tableName="person"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-25">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-25">
         <dropColumn columnName="details" tableName="record"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-26">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-26">
         <dropSequence sequenceName="hibernate_sequence"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-27">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-27">
         <dropSequence sequenceName="question_sequence"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-1">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-1">
         <dropForeignKeyConstraint baseTableName="record" constraintName="user_fk"/>
         <addForeignKeyConstraint baseColumnNames="u_id" baseTableName="record" constraintName="user_fk" referencedColumnNames="id" referencedTableName="userinfo"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-2">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-2">
         <modifyDataType columnName="contact_no" newDataType="bigint(19)" tableName="userinfo"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-3">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-3">
         <modifyDataType columnName="created_at" newDataType="datetime" tableName="question"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-4">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-4">
         <modifyDataType columnName="id" newDataType="int(10)" tableName="answers"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-5">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-5">
         <modifyDataType columnName="id" newDataType="int(10)" tableName="record"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-6">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-6">
         <modifyDataType columnName="id" newDataType="int(10)" tableName="userinfo"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-7">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-7">
         <modifyDataType columnName="q_id" newDataType="int(10)" tableName="answers"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-8">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-8">
         <modifyDataType columnName="q_id" newDataType="int(10)" tableName="question"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-9">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-9">
         <modifyDataType columnName="u_id" newDataType="int(10)" tableName="answers"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-10">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-10">
         <modifyDataType columnName="u_id" newDataType="int(10)" tableName="question"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-11">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-11">
         <modifyDataType columnName="u_id" newDataType="int(10)" tableName="record"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-12">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-12">
         <modifyDataType columnName="updated_at" newDataType="datetime" tableName="question"/>
     </changeSet>
-    <changeSet author="kuliza-r (generated)" id="1570169619581-13">
+    <changeSet author="kuliza-r (generated)" id="1570192003439-13">
+        <modifyDataType columnName="zip" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-14">
+        <createTable tableName="hibernate_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-15">
+        <createTable tableName="question_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-16">
+        <createIndex indexName="FKhhde1tq63639i75wgawjcpdk2" tableName="answers">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-17">
+        <createIndex indexName="FKo6d9tn7eax9lse434wgr7t1pn" tableName="question">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-18">
+        <createIndex indexName="FKoj7r0rrodjxdf1cwoy4tig6h3" tableName="answers">
+            <column name="q_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-19">
+        <createIndex indexName="user_fk" tableName="record">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-20">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkoj7r0rrodjxdf1cwoy4tig6h3"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-21">
+        <dropForeignKeyConstraint baseTableName="question" constraintName="fkpq89wkftck3l5pfi8t3onb2qh"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-22">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkpysatgd58r1ni95nf3av645e7"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-23">
+        <dropForeignKeyConstraint baseTableName="person" constraintName="question_fk"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-24">
+        <dropTable tableName="person"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-25">
+        <dropColumn columnName="details" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-26">
+        <dropSequence sequenceName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-27">
+        <dropSequence sequenceName="question_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-1">
+        <dropForeignKeyConstraint baseTableName="record" constraintName="user_fk"/>
+        <addForeignKeyConstraint baseColumnNames="u_id" baseTableName="record" constraintName="user_fk" referencedColumnNames="id" referencedTableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-2">
+        <modifyDataType columnName="contact_no" newDataType="bigint(19)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-3">
+        <modifyDataType columnName="created_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-4">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-5">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-6">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-7">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-8">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-9">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-10">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-11">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-12">
+        <modifyDataType columnName="updated_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192066880-13">
+        <modifyDataType columnName="zip" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-14">
+        <createTable tableName="hibernate_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-15">
+        <createTable tableName="question_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-16">
+        <createIndex indexName="FKhhde1tq63639i75wgawjcpdk2" tableName="answers">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-17">
+        <createIndex indexName="FKo6d9tn7eax9lse434wgr7t1pn" tableName="question">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-18">
+        <createIndex indexName="FKoj7r0rrodjxdf1cwoy4tig6h3" tableName="answers">
+            <column name="q_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-19">
+        <createIndex indexName="user_fk" tableName="record">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-20">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkoj7r0rrodjxdf1cwoy4tig6h3"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-21">
+        <dropForeignKeyConstraint baseTableName="question" constraintName="fkpq89wkftck3l5pfi8t3onb2qh"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-22">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkpysatgd58r1ni95nf3av645e7"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-23">
+        <dropForeignKeyConstraint baseTableName="person" constraintName="question_fk"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-24">
+        <dropTable tableName="person"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-25">
+        <dropColumn columnName="details" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-26">
+        <dropSequence sequenceName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-27">
+        <dropSequence sequenceName="question_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-1">
+        <dropForeignKeyConstraint baseTableName="record" constraintName="user_fk"/>
+        <addForeignKeyConstraint baseColumnNames="u_id" baseTableName="record" constraintName="user_fk" referencedColumnNames="id" referencedTableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-2">
+        <modifyDataType columnName="contact_no" newDataType="bigint(19)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-3">
+        <modifyDataType columnName="created_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-4">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-5">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-6">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-7">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-8">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-9">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-10">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-11">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-12">
+        <modifyDataType columnName="updated_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192139825-13">
+        <modifyDataType columnName="zip" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-14">
+        <createTable tableName="hibernate_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-15">
+        <createTable tableName="question_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-16">
+        <createIndex indexName="FKhhde1tq63639i75wgawjcpdk2" tableName="answers">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-17">
+        <createIndex indexName="FKo6d9tn7eax9lse434wgr7t1pn" tableName="question">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-18">
+        <createIndex indexName="FKoj7r0rrodjxdf1cwoy4tig6h3" tableName="answers">
+            <column name="q_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-19">
+        <createIndex indexName="user_fk" tableName="record">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-20">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkoj7r0rrodjxdf1cwoy4tig6h3"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-21">
+        <dropForeignKeyConstraint baseTableName="question" constraintName="fkpq89wkftck3l5pfi8t3onb2qh"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-22">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkpysatgd58r1ni95nf3av645e7"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-23">
+        <dropForeignKeyConstraint baseTableName="person" constraintName="question_fk"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-24">
+        <dropTable tableName="person"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-25">
+        <dropColumn columnName="details" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-26">
+        <dropSequence sequenceName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-27">
+        <dropSequence sequenceName="question_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-1">
+        <dropForeignKeyConstraint baseTableName="record" constraintName="user_fk"/>
+        <addForeignKeyConstraint baseColumnNames="u_id" baseTableName="record" constraintName="user_fk" referencedColumnNames="id" referencedTableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-2">
+        <modifyDataType columnName="contact_no" newDataType="bigint(19)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-3">
+        <modifyDataType columnName="created_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-4">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-5">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-6">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-7">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-8">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-9">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-10">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-11">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-12">
+        <modifyDataType columnName="updated_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192652057-13">
+        <modifyDataType columnName="zip" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-14">
+        <createTable tableName="hibernate_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-15">
+        <createTable tableName="question_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-16">
+        <createIndex indexName="FKhhde1tq63639i75wgawjcpdk2" tableName="answers">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-17">
+        <createIndex indexName="FKo6d9tn7eax9lse434wgr7t1pn" tableName="question">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-18">
+        <createIndex indexName="FKoj7r0rrodjxdf1cwoy4tig6h3" tableName="answers">
+            <column name="q_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-19">
+        <createIndex indexName="user_fk" tableName="record">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-20">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkoj7r0rrodjxdf1cwoy4tig6h3"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-21">
+        <dropForeignKeyConstraint baseTableName="question" constraintName="fkpq89wkftck3l5pfi8t3onb2qh"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-22">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkpysatgd58r1ni95nf3av645e7"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-23">
+        <dropForeignKeyConstraint baseTableName="person" constraintName="question_fk"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-24">
+        <dropTable tableName="person"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-25">
+        <dropColumn columnName="details" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-26">
+        <dropSequence sequenceName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-27">
+        <dropSequence sequenceName="question_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-1">
+        <dropForeignKeyConstraint baseTableName="record" constraintName="user_fk"/>
+        <addForeignKeyConstraint baseColumnNames="u_id" baseTableName="record" constraintName="user_fk" referencedColumnNames="id" referencedTableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-2">
+        <modifyDataType columnName="contact_no" newDataType="bigint(19)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-3">
+        <modifyDataType columnName="created_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-4">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-5">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-6">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-7">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-8">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-9">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-10">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-11">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-12">
+        <modifyDataType columnName="updated_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192699950-13">
+        <modifyDataType columnName="zip" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-14">
+        <createTable tableName="hibernate_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-15">
+        <createTable tableName="question_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-16">
+        <createIndex indexName="FKhhde1tq63639i75wgawjcpdk2" tableName="answers">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-17">
+        <createIndex indexName="FKo6d9tn7eax9lse434wgr7t1pn" tableName="question">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-18">
+        <createIndex indexName="FKoj7r0rrodjxdf1cwoy4tig6h3" tableName="answers">
+            <column name="q_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-19">
+        <createIndex indexName="user_fk" tableName="record">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-20">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkoj7r0rrodjxdf1cwoy4tig6h3"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-21">
+        <dropForeignKeyConstraint baseTableName="question" constraintName="fkpq89wkftck3l5pfi8t3onb2qh"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-22">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkpysatgd58r1ni95nf3av645e7"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-23">
+        <dropForeignKeyConstraint baseTableName="person" constraintName="question_fk"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-24">
+        <dropTable tableName="person"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-25">
+        <dropColumn columnName="details" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-26">
+        <dropSequence sequenceName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-27">
+        <dropSequence sequenceName="question_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-1">
+        <dropForeignKeyConstraint baseTableName="record" constraintName="user_fk"/>
+        <addForeignKeyConstraint baseColumnNames="u_id" baseTableName="record" constraintName="user_fk" referencedColumnNames="id" referencedTableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-2">
+        <modifyDataType columnName="contact_no" newDataType="bigint(19)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-3">
+        <modifyDataType columnName="created_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-4">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-5">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-6">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-7">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-8">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-9">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-10">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-11">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-12">
+        <modifyDataType columnName="updated_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570192813925-13">
+        <modifyDataType columnName="zip" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-14">
+        <createTable tableName="hibernate_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-15">
+        <createTable tableName="question_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-16">
+        <createIndex indexName="FKhhde1tq63639i75wgawjcpdk2" tableName="answers">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-17">
+        <createIndex indexName="FKo6d9tn7eax9lse434wgr7t1pn" tableName="question">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-18">
+        <createIndex indexName="FKoj7r0rrodjxdf1cwoy4tig6h3" tableName="answers">
+            <column name="q_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-19">
+        <createIndex indexName="user_fk" tableName="record">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-20">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkoj7r0rrodjxdf1cwoy4tig6h3"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-21">
+        <dropForeignKeyConstraint baseTableName="question" constraintName="fkpq89wkftck3l5pfi8t3onb2qh"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-22">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkpysatgd58r1ni95nf3av645e7"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-23">
+        <dropForeignKeyConstraint baseTableName="person" constraintName="question_fk"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-24">
+        <dropTable tableName="person"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-25">
+        <dropColumn columnName="details" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-26">
+        <dropSequence sequenceName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-27">
+        <dropSequence sequenceName="question_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-1">
+        <dropForeignKeyConstraint baseTableName="record" constraintName="user_fk"/>
+        <addForeignKeyConstraint baseColumnNames="u_id" baseTableName="record" constraintName="user_fk" referencedColumnNames="id" referencedTableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-2">
+        <modifyDataType columnName="contact_no" newDataType="bigint(19)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-3">
+        <modifyDataType columnName="created_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-4">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-5">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-6">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-7">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-8">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-9">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-10">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-11">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-12">
+        <modifyDataType columnName="updated_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194480417-13">
+        <modifyDataType columnName="zip" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-14">
+        <createTable tableName="hibernate_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-15">
+        <createTable tableName="question_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-16">
+        <createIndex indexName="FKhhde1tq63639i75wgawjcpdk2" tableName="answers">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-17">
+        <createIndex indexName="FKo6d9tn7eax9lse434wgr7t1pn" tableName="question">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-18">
+        <createIndex indexName="FKoj7r0rrodjxdf1cwoy4tig6h3" tableName="answers">
+            <column name="q_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-19">
+        <createIndex indexName="user_fk" tableName="record">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-20">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkoj7r0rrodjxdf1cwoy4tig6h3"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-21">
+        <dropForeignKeyConstraint baseTableName="question" constraintName="fkpq89wkftck3l5pfi8t3onb2qh"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-22">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkpysatgd58r1ni95nf3av645e7"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-23">
+        <dropForeignKeyConstraint baseTableName="person" constraintName="question_fk"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-24">
+        <dropTable tableName="person"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-25">
+        <dropColumn columnName="details" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-26">
+        <dropSequence sequenceName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-27">
+        <dropSequence sequenceName="question_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-1">
+        <dropForeignKeyConstraint baseTableName="record" constraintName="user_fk"/>
+        <addForeignKeyConstraint baseColumnNames="u_id" baseTableName="record" constraintName="user_fk" referencedColumnNames="id" referencedTableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-2">
+        <modifyDataType columnName="contact_no" newDataType="bigint(19)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-3">
+        <modifyDataType columnName="created_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-4">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-5">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-6">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-7">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-8">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-9">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-10">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-11">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-12">
+        <modifyDataType columnName="updated_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194804865-13">
+        <modifyDataType columnName="zip" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-14">
+        <createTable tableName="hibernate_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-15">
+        <createTable tableName="question_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-16">
+        <createIndex indexName="FKhhde1tq63639i75wgawjcpdk2" tableName="answers">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-17">
+        <createIndex indexName="FKo6d9tn7eax9lse434wgr7t1pn" tableName="question">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-18">
+        <createIndex indexName="FKoj7r0rrodjxdf1cwoy4tig6h3" tableName="answers">
+            <column name="q_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-19">
+        <createIndex indexName="user_fk" tableName="record">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-20">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkoj7r0rrodjxdf1cwoy4tig6h3"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-21">
+        <dropForeignKeyConstraint baseTableName="question" constraintName="fkpq89wkftck3l5pfi8t3onb2qh"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-22">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkpysatgd58r1ni95nf3av645e7"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-23">
+        <dropForeignKeyConstraint baseTableName="person" constraintName="question_fk"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-24">
+        <dropTable tableName="person"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-25">
+        <dropColumn columnName="details" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-26">
+        <dropSequence sequenceName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-27">
+        <dropSequence sequenceName="question_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-1">
+        <dropForeignKeyConstraint baseTableName="record" constraintName="user_fk"/>
+        <addForeignKeyConstraint baseColumnNames="u_id" baseTableName="record" constraintName="user_fk" referencedColumnNames="id" referencedTableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-2">
+        <modifyDataType columnName="contact_no" newDataType="bigint(19)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-3">
+        <modifyDataType columnName="created_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-4">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-5">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-6">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-7">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-8">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-9">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-10">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-11">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-12">
+        <modifyDataType columnName="updated_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570194848766-13">
+        <modifyDataType columnName="zip" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-14">
+        <createTable tableName="hibernate_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-15">
+        <createTable tableName="question_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-16">
+        <createIndex indexName="FKhhde1tq63639i75wgawjcpdk2" tableName="answers">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-17">
+        <createIndex indexName="FKo6d9tn7eax9lse434wgr7t1pn" tableName="question">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-18">
+        <createIndex indexName="FKoj7r0rrodjxdf1cwoy4tig6h3" tableName="answers">
+            <column name="q_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-19">
+        <createIndex indexName="user_fk" tableName="record">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-20">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkoj7r0rrodjxdf1cwoy4tig6h3"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-21">
+        <dropForeignKeyConstraint baseTableName="question" constraintName="fkpq89wkftck3l5pfi8t3onb2qh"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-22">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkpysatgd58r1ni95nf3av645e7"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-23">
+        <dropForeignKeyConstraint baseTableName="person" constraintName="question_fk"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-24">
+        <dropTable tableName="person"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-25">
+        <dropColumn columnName="details" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-26">
+        <dropSequence sequenceName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-27">
+        <dropSequence sequenceName="question_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-1">
+        <dropForeignKeyConstraint baseTableName="record" constraintName="user_fk"/>
+        <addForeignKeyConstraint baseColumnNames="u_id" baseTableName="record" constraintName="user_fk" referencedColumnNames="id" referencedTableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-2">
+        <modifyDataType columnName="contact_no" newDataType="bigint(19)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-3">
+        <modifyDataType columnName="created_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-4">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-5">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-6">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-7">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-8">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-9">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-10">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-11">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-12">
+        <modifyDataType columnName="updated_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570195084280-13">
+        <modifyDataType columnName="zip" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-14">
+        <createTable tableName="hibernate_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-15">
+        <createTable tableName="question_sequence">
+            <column name="next_val" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-16">
+        <createIndex indexName="FKhhde1tq63639i75wgawjcpdk2" tableName="answers">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-17">
+        <createIndex indexName="FKo6d9tn7eax9lse434wgr7t1pn" tableName="question">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-18">
+        <createIndex indexName="FKoj7r0rrodjxdf1cwoy4tig6h3" tableName="answers">
+            <column name="q_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-19">
+        <createIndex indexName="user_fk" tableName="record">
+            <column name="u_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-20">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkoj7r0rrodjxdf1cwoy4tig6h3"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-21">
+        <dropForeignKeyConstraint baseTableName="question" constraintName="fkpq89wkftck3l5pfi8t3onb2qh"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-22">
+        <dropForeignKeyConstraint baseTableName="answers" constraintName="fkpysatgd58r1ni95nf3av645e7"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-23">
+        <dropForeignKeyConstraint baseTableName="person" constraintName="question_fk"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-24">
+        <dropTable tableName="person"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-25">
+        <dropColumn columnName="details" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-26">
+        <dropSequence sequenceName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-27">
+        <dropSequence sequenceName="question_sequence"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-1">
+        <dropForeignKeyConstraint baseTableName="record" constraintName="user_fk"/>
+        <addForeignKeyConstraint baseColumnNames="u_id" baseTableName="record" constraintName="user_fk" referencedColumnNames="id" referencedTableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-2">
+        <modifyDataType columnName="contact_no" newDataType="bigint(19)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-3">
+        <modifyDataType columnName="created_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-4">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-5">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-6">
+        <modifyDataType columnName="id" newDataType="int(10)" tableName="userinfo"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-7">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-8">
+        <modifyDataType columnName="q_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-9">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="answers"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-10">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-11">
+        <modifyDataType columnName="u_id" newDataType="int(10)" tableName="record"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-12">
+        <modifyDataType columnName="updated_at" newDataType="datetime" tableName="question"/>
+    </changeSet>
+    <changeSet author="kuliza-r (generated)" id="1570205802775-13">
         <modifyDataType columnName="zip" newDataType="int(10)" tableName="userinfo"/>
     </changeSet>
 </databaseChangeLog>
